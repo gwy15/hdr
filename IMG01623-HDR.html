@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="images">
+
+    </div>
+</body>
+<script>
+    var dom = document.getElementById('images');
+    var IMAGES = [
+        "HDR-709.avif",
+        // "HDR-709.jxl",
+        // "HDR-709.tif",
+        "HDR-P3.avif",
+        // "HDR-P3.jxl",
+        // "HDR-P3.tif",
+        "HDR-2020.avif",
+        // "HDR-2020.jxl",
+        // "HDR-2020.tif",
+        "SDR.jpg"
+    ];
+    IMAGES.forEach(function (image) {
+        var img = document.createElement('img');
+        img.src = image;
+        dom.appendChild(img);
+        var label = document.createElement('p');
+        label.innerText = '↑ ' + image;
+        dom.appendChild(label);
+    });
+</script>
+
+<style>
+#images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img {
+    max-width: 80vw;
+}
+p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+</style>
+
+</html>
